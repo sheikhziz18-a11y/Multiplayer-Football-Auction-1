@@ -1,0 +1,237 @@
+:root {
+  --bid-navy: #000080;
+  --skip-red: #8b0000;
+  --force-red: #000;
+  --win-green: #0b7a3f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+}
+
+/* HIDDEN */
+.hidden { display: none !important; }
+
+/* LOGIN */
+#loginPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0b0b;
+  color: white;
+}
+
+.login-container { text-align: center; }
+.title { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+
+.login-box {
+  background: #ffffff10;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.login-box input {
+  width: 220px;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 6px;
+}
+
+.login-box button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* AUCTION */
+#auctionPage { padding: 12px; }
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.top-bar button {
+  margin-left: 6px;
+}
+
+.main-layout {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+}
+
+.left-panel, .right-panel { flex: 1; }
+
+/* WHEEL */
+.wheel-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#wheel {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 6px solid #222;
+  background: conic-gradient(
+    #ffdddd 0deg 36deg,
+    #ddeeff 36deg 72deg,
+    #ddffdd 72deg 108deg,
+    #ffeecc 108deg 144deg,
+    #ffccdd 144deg 180deg,
+    #ccddff 180deg 216deg,
+    #ddffee 216deg 252deg,
+    #ffddcc 252deg 288deg,
+    #eeddff 288deg 324deg,
+    #cceeff 324deg 360deg
+  );
+}
+
+.wheel-pointer {
+  font-size: 26px;
+  color: red;
+  margin-top: 6px;
+}
+
+/* PLAYER CARD */
+.player-card {
+  margin-top: 20px;
+  padding: 14px;
+  border: 2px solid #111;
+  border-radius: 10px;
+  background: #fafafa;
+  text-align: center;
+}
+
+#playerName { font-size: 20px; font-weight: bold; }
+
+/* TIMERS */
+.timers-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.timer {
+  flex: 1;
+  border: 2px solid #111;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#initialTimer, #bidTimer {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* BLINK */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+.blink { animation: blink 0.8s linear infinite; }
+
+/* BUTTONS */
+.buttons-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.bid-btn {
+  background: var(--bid-navy);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+}
+
+.skip-btn {
+  background: var(--skip-red);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+}
+
+/* FORCE SELL */
+#forceSellBtn {
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* LOG */
+.log-box {
+  height: 220px;
+  border: 2px solid #111;
+  padding: 10px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.log-entry.spin { color: #001f4d; }
+.log-entry.skip { color: var(--skip-red); }
+.log-entry.win { color: var(--win-green); }
+.log-entry.unsold { color: #444; }
+.log-entry.info { color: #111; }
+
+/* SUMMARY */
+.summary-panel {
+  margin-top: 16px;
+  border-top: 2px solid #111;
+  padding: 10px;
+}
+
+.summary-player {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.player-team {
+  display: none;
+  margin-left: 10px;
+}
+
+.player-team.show { display: block; }
+
+/* MOBILE CENTER FIX */
+@media (max-width: 720px) {
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-panel, .left-panel {
+    width: 100%;
+    text-align: center;
+  }
+
+  #wheel {
+    width: 210px;
+    height: 210px;
+  }
+}
