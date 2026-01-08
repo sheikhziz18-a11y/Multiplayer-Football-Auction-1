@@ -5,7 +5,7 @@ const { Server } = require("socket.io");
 const fs = require("fs");
 
 let MASTER_PLAYERS = JSON.parse(
-  fs.readFileSync("shuffled_players.json", "utf8")
+  fs.readFileSync("shuffled_legends_players.json", "utf8")
 );
 
 const app = express();
